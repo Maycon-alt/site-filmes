@@ -16,7 +16,7 @@ const Movie = () => {
     const getMovie = async (url) => {
       const res = await fetch(url);
       const data = await res.json();
-
+      console.log(data);
       setMovie(data);
     };
 
@@ -38,6 +38,12 @@ const Movie = () => {
           <>
             <MovieCard movie={movie} showLink={false} />
             <p className="tagline">{movie.tagline}</p>
+            <div className="info">
+              <h3>
+                <BsGraphUp/> Data de Lançamento:
+              </h3>
+              <p>{movie.release_date}</p>
+            </div>
             <div className="info">
               <h3>
                 <BsWallet2/> Orçamento:
